@@ -1,0 +1,764 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Barra de navegación superior */
+.top-nav {
+  background-color: rgba(255, 255, 255, 0.8); 
+ 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 40px; 
+  
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+
+
+.nav-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+     color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: gray;
+}
+
+.logo {
+    width: 80px;
+    cursor: pointer;
+}
+
+/* Contenedor del logo + texto */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.texto-logo {
+    font-size: 20px; 
+    font-weight: bold;
+    color: #6689dc;
+    text-shadow: 2px 2px 4px #22225e;
+    margin-left: 10px; 
+}
+
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Responsive menu */
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+
+
+/* HEADER CONTENIDO */
+.header {
+    width: 100%;
+    height: 100vh; /* Ocupa el 100% de la pantalla visible */
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #d4a437;
+    padding-top: 120px; /* Ajusta para que el menú no se mezcle con el fondo */
+    position: relative;
+    text-shadow: 2px 2px 4px #953d3d;
+    background-image: url(imagenes/fondo\ inicio\ 1.0.webp);
+}
+
+
+
+
+
+.texto-logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #6689dc;
+    text-shadow: 2px 2px 4px #22225e;
+}
+
+.text-box {
+    margin-top: 16%;
+    font-size: 30px;
+}
+
+.text-box h1 {
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 100px;
+    margin-bottom: 10px;
+    color: #1b181e;
+    text-shadow: 3px 3px 6px #1c1c32;
+    text-align: right;
+}
+
+
+p {
+    font-size: 40px;
+    color: #1b181e;
+    text-shadow: 2px 2px 5px #1c1c32;
+    text-align: right;
+}
+
+  
+.historia {
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    padding: 100px; /* Espacio interior (padding) */
+    background-image: url(imagenes/backgroud1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e0e0e0; /* Color base del texto */
+}
+
+.historia-titulo h1 {
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 50px;
+    color: #ffda77; 
+    text-shadow: 2px 2px 5px rgba(244, 69, 69, 0.5);
+    
+}
+
+
+.historia {
+    width: 100%;
+    padding: 100px;
+    position: relative; /* Importante para que la capa borrosa se posicione correctamente */
+    overflow: hidden;   /* Para que el fondo no se desborde */
+    color: #e0e0e0;
+}
+
+.historia-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(imagenes/backgroud1.jpg) no-repeat center top;
+    background-size: cover;
+    filter: blur(8px); /* Cantidad de desenfoque */
+    z-index: 1; /* Fondo por detrás */
+}
+
+.historia > *:not(.historia-fondo) {
+    position: relative;
+    z-index: 2; /* Todo el contenido por delante del fondo borroso */
+}
+
+.historia-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.historia-item.invertido {
+    flex-direction: row-reverse; /* Invierte la posición */
+}
+
+.historia-texto {
+    flex: 1;
+    padding: 20px;
+}
+
+.historia-texto h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ffda77; /* Títulos a juego */
+    text-shadow: 2px 2px 5px rgba(244, 69, 69, 0.5);
+    justify-content: center;
+}
+
+.historia-texto p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #e0e0e0; /* Texto claro */
+    text-align: justify; /* <<< Esta línea alinea el texto justificado */
+}
+
+
+.historia-imagen {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.historia-imagen img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.historia-imagen img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .historia-item, .historia-item.invertido {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+.personajes {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: visible;
+    color: #fff;
+    padding-top: 120px; 
+}
+
+.personajes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagenes/fondo1.8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(7px) ;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+
+
+.titulo-personajes {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 60px;
+    color: #ffda77; 
+    text-shadow: 2px 2px 5px rgba(244, 69, 69, 0.5);
+    
+}
+
+.organizacion-conjunto {
+    margin-bottom: 50px;
+}
+
+.subtitulo-organizacion {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: rgb(81, 74, 74);
+  text-shadow: none;
+  border-bottom: 2px solid rgb(83, 77, 77);
+  padding: 0 40px 10px 40px; 
+  display: block;
+}
+
+
+.organizacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 40px; 
+    margin-bottom: 60px;
+}
+
+.personaje-card {
+    width: calc(50% - 15px);
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: rgba(165, 216, 208, 0.6);
+    box-shadow: 0 4px 10px rgba(128, 108, 149, 0.4);
+    transition: transform 0.3s ease;
+    margin-top: 30px;
+    text-align: justify;
+    cursor: pointer;
+
+}
+
+
+.personaje-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  
+}
+
+/* Overlay de texto oculto al inicio */
+.personaje-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  text-align: justify;
+}
+
+.personaje-overlay h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.personaje-overlay p {
+  font-size: 16px;
+  color: #e0e0e0;
+  font-size: 20px;
+}
+
+
+.personaje-card:hover .personaje-overlay {
+  opacity: 1;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.subtitulo-organizacion{
+    color:black;
+}
+
+.subtitulo-organizacion {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: rgb(81, 74, 74); 
+  text-shadow: none; 
+  border-bottom: 2px solid rgb(83, 77, 77);
+  padding-bottom: 10px;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+    .personaje-card {
+        width: 100%; 
+    }
+}
+
+
+ .temporadas-section {
+    padding: 40px 7%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    
+}
+
+
+/* Fondo difuminado */
+.temporadas-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("imagenes/fondo1.7.jpg"); 
+    background-position: center;
+      filter: blur(4px) ;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+
+.titulo-temporadas {
+    text-align: center;
+    font-size: 55px;
+    color: #efc86d;
+    margin-top: 80px; /* <-- espacio debajo del menú */
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px rgba(244, 69, 69, 0.5);
+}
+
+
+.temporadas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 40px;
+  justify-content: center;
+}
+
+.temporada-card {
+    background: rgba(30, 30, 30, 0.6); 
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+
+    backdrop-filter: blur(8px); /* desenfoque suave */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-image: url(imagenes/fondo1.4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.temporada-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(255, 204, 112, 0.35);
+}
+
+.temporada-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+
+.temporada-contenido {
+    padding: 15px;
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.temporada-contenido h2 {
+    font-size: 20px;
+    color: #ffd369;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+.temporada-contenido p {
+    font-size: 16px;
+    color: #e0e0e0;
+    text-align: justify;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.video-container {
+    margin-top: 15px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+.video-container {
+  margin-top: 15px;
+  margin-bottom: 20px; 
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* 🔹 SECCIÓN CON FONDO DIFUMINADO */
+.seccion-sugerencias {
+  position: relative;
+  z-index: 1;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+
+/* Capa oscura encima del fondo */
+.seccion-sugerencias::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  z-index: -1;
+  opacity: 0.8;
+}
+
+
+/* 🔸 TÍTULO PRINCIPAL */
+.titulo-sugerencias {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px; 
+  color: #ffda77;
+  text-shadow: 2px 2px 5px rgba(244, 69, 69, 0.5);
+    
+  font-size: 55px;
+  padding-top: 50px;
+}
+
+.titulo-sugerencias h1 {
+  font-size: 40px;
+  margin-bottom: 60px;
+
+}
+
+
+/* 🔹 CONTENEDOR GENERAL: PERSONAJE + FORMULARIO */
+/* CONTENEDOR FLEX GENERAL */
+.contenedor-sugerencias {
+  display: flex;
+  justify-content: center; /* centramos todo */
+  align-items: center;
+  margin: 40px auto;
+  max-width: 1300px;
+  padding: 20px;
+  flex-direction: column; 
+}
+
+/* FONDO DEL FORMULARIO */
+.formulario-wrapper {
+  width: 100%;
+  padding: 60px 20px;
+  background-image: url("imagenes/fondo\ personajes3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORMULARIO */
+.sugerencia-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: #1e1e2f;
+  color: #f1d289;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(241, 210, 137, 0.2);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* TÍTULO CENTRADO */
+.sugerencia-form h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 45px;
+  color: #f9e3a1;
+}
+
+/* CAMPOS DEL FORMULARIO */
+.sugerencia-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.sugerencia-form input,
+.sugerencia-form select,
+.sugerencia-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #2a2a3f;
+  color: #fff;
+  font-size: 15px;
+  transition: border 0.3s ease;
+}
+
+.sugerencia-form input:focus,
+.sugerencia-form select:focus,
+.sugerencia-form textarea:focus {
+  border-color: #f1d289;
+  outline: none;
+}
+
+.sugerencia-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* BOTÓN */
+.sugerencia-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #f1d289;
+  color: #1e1e2f;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.sugerencia-form button:hover {
+  background-color: #ffe4a4;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contenedor-sugerencias {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sugerencia-form {
+    max-width: 100%;
+  }
+}
+
+
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-content {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: white;
+}
+a i {
+  font-size: 30px;
+  color: #bfc3c8;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+a i:hover {
+  color: #ffe4a4;
+  transform: scale(1.2);
+}
+
+.footer-social a i {
+  font-size: 40px; /* Tamaño más grande del ícono */
+  color: #fff;
+  margin: 0 15px;
+  transition: transform 0.3s, color 0.3s;
+}
+.footer-social a {
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+
+.footer-social a i:hover {
+  transform: scale(1.2);
+  color: #cdc7ba; /* Cambia el color al pasar el mouse (opcional) */
+}
+
+
+.correo {
+    color: #fff;
+    text-decoration: none;
+}
+
+.correo:hover {
+    text-decoration: underline;
+}
+
